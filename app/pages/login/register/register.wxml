@@ -1,0 +1,22 @@
+<!--pages/login/register/register.wxml-->
+<view class="page">
+  <view class="weui-cells__title">登录</view>
+  <view class='my-up-content show-phone'>
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before" bindtap='editPhone'>
+        <text class='phoneText'>{{phone}}</text>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <input class="weui-input" placeholder-class="phcolor" type='number' maxlength="6" value="{{code}}" bindinput="codeInput" placeholder="请输入验证码" />
+        <button class='getCode' disabled='{{disabled}}' bindtap="getVerificationCode">
+          {{time}}
+        </button>
+      </view>
+    </view>
+    <view class="my-bk-btn">
+      <button class="" disabled="{{btnState}}" bindtap="login">登录</button>
+    </view>
+  </view>
+</view>

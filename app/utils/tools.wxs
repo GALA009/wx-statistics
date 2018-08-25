@@ -1,0 +1,142 @@
+/**
+ * 时间戳转换时间，返回年月日时分秒
+ * @param time 时间戳
+ */
+var timetrans =  function(time) {
+    var _time = (time.toString.length === 13) ? time.substring(0, 10) : time; // 格式化时间戳
+    var date = getDate(_time);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1);
+    var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
+    var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours());
+    var m = (date.getMinutes() <10 ? '0' + date.getMinutes() : date.getMinutes());
+    var s = (date.getSeconds() <10 ? '0' + date.getSeconds() : date.getSeconds());
+    return {
+      Y: Y,
+      M: M,
+      D: D,
+      h: h,
+      m: m,
+      s: s
+    };
+}
+/**
+ * 时间戳格式化为 月日格式
+ * @param time 
+ */
+var timetransMMDD =  function (time) {
+  if(time) {
+    var date = timetrans(time);
+    return date.M + '月' + date.D + '日';
+  }
+  else {
+    return '';
+  }
+
+}
+
+/**
+ * 时间戳格式化为 月日格式
+ * @param time 
+ */
+var timetransMMAndDD =  function (time) {
+  if(time) {
+    var date = timetrans(time);
+    return date.M + '/' + date.D;
+  }
+  else {
+    return '';
+  }
+}
+
+/**
+ * 时间切割，切割 2018-07-01 08:00:00 格式数据
+ */
+var timeSplitYMD = function (str) {
+  console.log('timeSplitYMD', str);
+  if(str) {
+    return str.split(' ')[0];
+  }
+  else {
+    return '';
+  }
+}
+
+
+/**
+ * 字符串切割
+ */
+var strSplitToArr = function (str) {
+  if(str) {
+    return str.split(',');
+  }
+  else {
+    return [];
+  }
+}
+
+/**
+ * 字符串背景图片链接切割
+ */
+var strSplitToStrBg = function (str) {
+  if(str) {
+    return str.split(',').splice(0, 1).join('');
+  }
+  else {
+    return '';
+  }
+}
+
+/**
+ * 字符串切割转换成数组，切割前三个转成字符串
+ */
+var strSplitToStr3 = function (str) {
+  if(str) {
+    return str.split(',').splice(0, 3).join('、');
+  }
+  else {
+    return [];
+  }
+
+}
+
+/**
+ * 根据传参，判断该参数是否在对应数组内
+ */
+var idInArr = function (id, arr) {
+  var index = arr.indexOf(id); // 获取当前id 所在 下标
+  
+  // 如果 -1 说明没有存在
+  if(index === -1) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+/**
+ * 数字千分位切割
+ */
+var toThousands = function (num) {
+    // var num = (num || 0).toString(), result = '';
+    // while (num.length > 3) {
+    //     result = ',' + num.slice(-3) + result;
+    //     num = num.slice(0, num.length - 3);
+    // }
+    // if (num) { result = num + result; }
+
+    return num;
+}
+
+module.exports = {
+  timetrans: timetrans,
+  timetransMMDD: timetransMMDD,
+  timetransMMAndDD: timetransMMAndDD,
+  strSplitToArr: strSplitToArr,
+  strSplitToStr3: strSplitToStr3,
+  idInArr: idInArr,
+  strSplitToStrBg: strSplitToStrBg,
+  toThousands: toThousands,
+  timeSplitYMD: timeSplitYMD
+};

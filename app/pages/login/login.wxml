@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class='authorizationModel' wx:if="{{getUserInfoFail}}" >
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权</button>
+</view>
+ 
+<view class="page" wx:if="{{!getUserInfoFail}}">
+  <view class="weui-cells__title">登录</view>
+  <view class='my-up-content show-phone'>
+    <view class="weui-cell weui-cell_select">
+      <!-- <view class="weui-cell__hd">
+        <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+          <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+        </picker>
+      </view> -->
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <input class="weui-input" auto-focus="true" placeholder-class="phcolor" type='number' maxlength="11" value="{{phone}}" bindinput="phoneInput" placeholder="请输入手机号码" />
+        <text class='emptyBtn' bindtap='emptyBtn' wx-if="{{emptyBtn}}">X</text>
+      </view>
+    </view>
+    <view class="my-bk-btn">
+      <button class="" disabled="{{btnState}}" bindtap="next">下一步</button>
+    </view>
+  </view>
+</view>
+

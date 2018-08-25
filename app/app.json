@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "YZ统计大师",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#D4D4D4",
+    "selectedColor": "#333333",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/tabBar/ic_home_nor@2x.png",
+        "selectedIconPath": "assets/tabBar/ic_home_ele@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "assets/tabBar/icon_me_nor@2x.png",
+        "selectedIconPath": "assets/tabBar/icon_me_ele@2x.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

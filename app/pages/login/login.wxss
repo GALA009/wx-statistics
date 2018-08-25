@@ -1,0 +1,57 @@
+/* pages/login/login.wxss */
+.page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F2F4F5;
+}
+.weui-cells__title{
+  margin-top: 150rpx;
+  margin-bottom: 80rpx;
+  color: #000000;
+  font-size: 40rpx;
+  text-align: center;
+}
+.my-up-content{
+  overflow: hidden
+}
+.my-up-content .weui-cell {
+  background:#ffffff;
+  font-size:30rpx;
+  padding:20rpx 20rpx;
+  border: 2rpx #eee solid;
+}
+.weui-cell__hd{
+  position: relative;
+  width: 160rpx;
+}
+.emptyBtn{
+  position:absolute;
+  top:50%;
+  right:20rpx;
+  z-index: 9;
+  background:#A1A2A1;
+  color:#fff;
+  padding:10rpx;
+  border-radius:50%;
+  width:30rpx;
+  height:30rpx;
+  text-align:center;
+  line-height:30rpx;
+  font-size:24rpx;
+  margin-top:-24rpx;
+}
+.weui-cell__bd_in-select-before,.weui-cell__hd_in-select-after {
+  padding-left: 20rpx;
+}
+.my-bk-btn {
+  margin:60rpx 40rpx 0;
+}
+button{
+  background: #4B4A5A;
+  color: #fff;
+}
+button[disabled]:not([type]){
+  background: #A1A2A1;
+  color: #fff;
+}
